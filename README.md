@@ -2,7 +2,8 @@
 
 SpiceClient is a small macOS SwiftUI launcher for SPICE remote desktop sessions.
 
-It lets you choose a `.vv` virt-viewer file and launches the session with the Homebrew `spice-gtk` backend (`spicy`). The Swift app does not save sessions or passwords.
+It lets you choose a `.vv` virt-viewer file and launches the session with the Homebrew `spice-gtk` backend (`spicy`). 
+
 
 ## Install Dependencies
 
@@ -38,7 +39,7 @@ In the app:
 2. Select your `.vv` file.
 3. Click `Launch Spice GTK`.
 
-The app builds a local `SpiceClient.app` under `.build/release/` and launches it with a Dock icon.
+The app builds a local `SpiceClient.app` under `.build/release/` and launches it.
 
 ## Notes
 
