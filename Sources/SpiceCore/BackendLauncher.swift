@@ -5,14 +5,25 @@ public enum BackendError: Error, Equatable, LocalizedError, Sendable {
     case launchFailed(String)
     case tempFileFailed(String)
 
+    public static let spiceGTKInstallCommand = "brew install spice-gtk"
+
     public var errorDescription: String? {
         switch self {
         case .backendNotFound:
-            "No SPICE viewer backend was found. Install it with: brew install spice-gtk"
+            "SPICE GTK is not installed."
         case .launchFailed(let message):
             "Could not launch SPICE viewer: \(message)"
         case .tempFileFailed(let message):
             "Could not create a temporary backend file: \(message)"
+        }
+    }
+
+    public var recoverySuggestion: String? {
+        switch self {
+        case .backendNotFound:
+            "Install it with Homebrew:\n\(Self.spiceGTKInstallCommand)"
+        case .launchFailed, .tempFileFailed:
+            nil
         }
     }
 }

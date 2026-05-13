@@ -54,6 +54,20 @@ struct ContentView: View {
                         .font(.headline)
                 }
 
+                if !model.isBackendAvailable {
+                    Label {
+                        Text(model.backendInstallMessage)
+                            .multilineTextAlignment(.leading)
+                    } icon: {
+                        Image(systemName: "exclamationmark.triangle.fill")
+                    }
+                    .font(.callout)
+                    .foregroundStyle(.red)
+                    .padding(12)
+                    .frame(maxWidth: 520, alignment: .leading)
+                    .background(.red.opacity(0.08), in: RoundedRectangle(cornerRadius: 8))
+                }
+
                 Text(model.statusMessage)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

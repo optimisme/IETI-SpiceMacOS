@@ -18,6 +18,14 @@ final class AppModel: ObservableObject {
         selectedConnection != nil && !isLaunching
     }
 
+    var isBackendAvailable: Bool {
+        launcher.resolveBackendPath(configuration: backendConfiguration()) != nil
+    }
+
+    var backendInstallMessage: String {
+        "Install SPICE GTK with Homebrew:\n\(BackendError.spiceGTKInstallCommand)"
+    }
+
     func chooseVirtViewerFile() {
         NSApp.activate(ignoringOtherApps: true)
         let panel = NSOpenPanel()
@@ -69,7 +77,7 @@ final class AppModel: ObservableObject {
             return "Backend found: \(path)"
         }
 
-        return "SPICE backend not found. Install with: brew install spice-gtk"
+        return "SPICE GTK backend not found."
     }
 
     func backendDiagnostics() -> [BackendCandidate] {
@@ -124,9 +132,19 @@ final class AppModel: ObservableObject {
             hideLauncherWindow()
         } catch {
             isLaunching = false
-            errorMessage = error.localizedDescription
+            errorMessage = Self.displayMessage(for: error)
             statusMessage = "Launch failed."
         }
+    }
+
+    private static func displayMessage(for error: Error) -> String {
+        let localizedError = error as? LocalizedError
+        let description = localizedError?.errorDescription ?? error.localizedDescription
+        guard let recoverySuggestion = localizedError?.recoverySuggestion, !recoverySuggestion.isEmpty else {
+            return description
+        }
+
+        return "\(description)\n\n\(recoverySuggestion)"
     }
 
     private func markRemoteDesktopClosed() {

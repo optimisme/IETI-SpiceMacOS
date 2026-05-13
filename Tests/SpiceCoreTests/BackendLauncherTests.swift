@@ -56,6 +56,14 @@ struct BackendLauncherTests {
     }
 
     @Test
+    func missingBackendErrorExplainsHowToInstallSpiceGTK() {
+        let error = BackendError.backendNotFound
+
+        #expect(error.errorDescription == "SPICE GTK is not installed.")
+        #expect(error.recoverySuggestion?.contains("brew install spice-gtk") == true)
+    }
+
+    @Test
     func diagnosticsReportCandidateStatus() throws {
         let executable = URL(fileURLWithPath: NSTemporaryDirectory())
             .appendingPathComponent("remote-viewer-diagnostics-\(UUID().uuidString)")
