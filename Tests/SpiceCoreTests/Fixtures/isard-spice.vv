@@ -1,0 +1,19 @@
+[virt-viewer]
+type=spice
+proxy=http://gpu-a10-1.pilotfp.gencat.isardvdi.com:4104
+host=isard-hypervisor
+password=<redacted-test-password>
+tls-port=5922
+fullscreen=0
+title=Debian AI (TLS):%d - Prem SHIFT+F12 per sortir
+host-subject=CN=*.localdomain
+ca=-----BEGIN CERTIFICATE-----\nMIIDfTCCAmWgAwIBAgIUWepISVdoZ7TZQB6knJnLZVwXsQcwDQYJKoZIhvcNAQEL\nBQAwTTELMAkGA1UEBhMCQ0ExEjAQBgNVBAcMCUJhcmNlbG9uYTEUMBIGA1UECgwL\nbG9jYWxkb21haW4xFDASBgNVBAMMC2xvY2FsZG9tYWluMCAXDTI0MDMyNTE2MDc1\nNloYDzIwNTEwODEwMTYwNzU2WjBNMQswCQYDVQQGEwJDQTESMBAGA1UEBwwJQmFy\nY2Vsb25hMRQwEgYDVQQKDAtsb2NhbGRvbWFpbjEUMBIGA1UEAwwLbG9jYWxkb21h\naW4wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCa/jFwcxMcxxihdkJ8\noartwROEIgednoyzkWkGtnVMjiM0BCFu9nD9KvotvxLF+YWu1AATXhXlbp4lg8Yg\ndXvnEYyyVm9p+KnUlUfuv13Q3PzeGk2Zwgq1fnI+iMdJp5Bk7WOH+8P9oyY3MoEh\n+wmfVHfqqtUXa0917curZZs0kbtweH8Qlbx+2DyfyxWePzZ/B7abjDiHCcw6r6FR\nG8Xgtyu+6qCwhbwm+Wws/sPOv7mP1Y35LJVCjHhdGQlTo1AulaX8nJH980AUiqkw\n1kqElv8TYZy6YOibXUykQsdcxSVARuWXmzfrKDN+2wfgsQgxd6cr4EPIoxgPW43D\nDL8JAgMBAAGjUzBRMB0GA1UdDgQWBBSpSu2QAM8XGHzqA/QJ7qJZx79BAjAfBgNV\nHSMEGDAWgBSpSu2QAM8XGHzqA/QJ7qJZx79BAjAPBgNVHRMBAf8EBTADAQH/MA0G\nCSqGSIb3DQEBCwUAA4IBAQAEYbr9N+qNmZrtmRWnhAbp8UtPUvpiJBESe+uZumZr\njsl9rg7LkcfO1ZOQ1i27KG1Hbm3sxXZrPBJKqIuOgX3AvgcdnXfyVizp76tdZ3GX\nd+KL68hQedchaD2jF6/CZoniUiIJtjNQiWcegkOKAr9kS20z2xa1rUWlGVr9gLCy\naKU76L3mWIlF3XaXcLuf9QJSBGwIP4jABw96HbM0eRTCSoikBB3YgjYOM+7AdgSg\nFF5qn57ZJt6MPLQxcq+CPyngJsBPCYhE3v8AKa/eZZrRkV26NmXmtkEEq8PsTIpf\n/LEsrjISdM/xOEbIXfjTzsB4qKb1VgMlQ4yym6uqETko\n-----END CERTIFICATE-----\n
+enable-smartcard=0
+enable-usb-autoshare=1
+delete-this-file=1
+usb-filter=-1,-1,-1,-1,0
+tls-ciphers=DEFAULT
+toggle-fullscreen=shift+f11
+release-cursor=shift+f12
+secure-attention=ctrl+alt+end
+secure-channels=main;inputs;cursor;playback;record;display;usbredir;smartcard
