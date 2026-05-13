@@ -41,6 +41,26 @@ In the app:
 
 The app builds a local `SpiceClient.app` under `.build/release/` and launches it.
 
+## Run Without the Launcher UI
+
+To launch a `.vv` file directly from the terminal, use:
+
+```bash
+./run-cmd.sh path/to/session.vv
+```
+
+This builds and runs the `SpiceCmd` command-line target, parses the `.vv` file with
+the same `SpiceCore` parser used by the app, and launches the SPICE backend without
+opening the SwiftUI launcher window. The SPICE viewer itself still opens its normal
+remote desktop window.
+
+Useful options:
+
+```bash
+./run-cmd.sh --print-command path/to/session.vv
+./run-cmd.sh --backend /opt/homebrew/bin/spicy path/to/session.vv
+```
+
 ## Notes
 
 - Clipboard support is handled by `spice-gtk` and usually requires `spice-vdagent` inside the guest VM.

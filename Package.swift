@@ -9,6 +9,7 @@ let package = Package(
     ],
     products: [
         .executable(name: "SpiceClient", targets: ["SpiceClient"]),
+        .executable(name: "SpiceCmd", targets: ["SpiceCmd"]),
         .library(name: "SpiceCore", targets: ["SpiceCore"])
     ],
     targets: [
@@ -20,6 +21,11 @@ let package = Package(
             name: "SpiceClient",
             dependencies: ["SpiceCore"],
             path: "Sources/SpiceClient"
+        ),
+        .executableTarget(
+            name: "SpiceCmd",
+            dependencies: ["SpiceCore"],
+            path: "Sources/SpiceCmd"
         ),
         .testTarget(
             name: "SpiceCoreTests",
